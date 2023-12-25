@@ -17,6 +17,24 @@ const cnList = [
   },
 ];
 
-const enList = [];
+const enList = [
+  {
+    name: 'fanwood-webfont',
+    fontFamily: 'fanwood-webfont',
+  },
+  {
+    name: 'fanwood-italic-webfont',
+    fontFamily: 'fanwood-italic-webfont',
+  },
+  {
+    name: 'roboto',
+    fontFamily: 'roboto',
+  },
+  {
+    name: 'roboto-italic',
+    fontFamily: 'roboto-italic',
+  },
+
+];
 
 export default [...cnList, ...enList];

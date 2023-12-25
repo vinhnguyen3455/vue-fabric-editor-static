@@ -1,154 +1,129 @@
-var fs = require("fs");
-
-
+const fs = require("fs");
 
 const JSONData = {
     data: []
-}
+};
 
 const group = [
     // {
-    //     label: '卡通',
+    //     label: 'Cartoon',
     //     value: '',
     //     start: 460,
     //     end: 489
     // },
     {
-        label: '卡通水果',
+        label: 'Cartoon Fruits',
         value: 'fruits',
         start: 386,
         end: 409
     },
     {
-        label: '体育',
+        label: 'Sports',
         value: 'sports',
         start: 410,
         end: 459
     },
     {
-        label: '秋天',
+        label: 'Autumn',
         value: 'seasons',
         start: 40,
         end: 49
     },
     {
-        label: '计算机',
-        value: 'eletronics',
+        label: 'Computer',
+        value: 'electronics',
         start: 50,
         end: 75
     },
-    // {
-    //     label: '水果',
-    //     value: '',
-    //     start: 76,
-    //     end: 89
-    // },
-    // {
-    //     label: '衣服',
-    //     value: '',
-    //     start: 89,
-    //     end: 136
-    // },
     {
-        label: '旗帜',
+        label: 'Flags',
         value: 'flags',
         start: 137,
         end: 151
     },
     {
-        label: '树木',
+        label: 'Trees',
         value: 'threes',
         start: 152,
         end: 181
     },
     {
-        label: '食物',
+        label: 'Food',
         value: 'food',
         start: 182,
         end: 201
     },
     {
-        label: '服饰',
+        label: 'Clothes',
         value: 'clothes',
         start: 202,
         end: 222
     },
     {
-        label: '奖牌',
+        label: 'Medals',
         value: 'medals',
         start: 223,
         end: 252
     },
     {
-        label: '商务',
+        label: 'Business',
         value: 'business',
         start: 253,
         end: 261
     },
     {
-        label: '活动',
+        label: 'Activity',
         value: 'activity',
         start: 262,
         end: 270
     },
-    // {
-    //     label: '卡通水果',
-    //     value: '',
-    //     start: 271,
-    //     end: 300
-    // },
     {
-        label: '复古',
+        label: 'Vintage',
         value: 'vintage',
         start: 301,
         end: 350
     },
     {
-        label: '卡通',
+        label: 'Cartoon',
         value: '',
         start: 351,
         end: 385
     },
     {
-        label: '动物',
+        label: 'Animals',
         value: 'animals',
         start: 490,
         end: 519
     },
     {
-        label: '手绘',
+        label: 'Hand Painted',
         value: 'hand_painted',
         start: 0,
         end: 39
     }
-]
+];
 
-
-
-const baseUrl = 'https://nihaojob.github.io/vue-fabric-editor-static/svg/'
+const baseUrl = 'https://nihaojob.github.io/vue-fabric-editor-static/svg/';
 JSONData.data = group.map((item, i) => {
-    const list = []
+    const list = [];
     for (let index = item.start; index < item.end; index++) {
         list.push({
             "label": item.label + index,
             "value": i + '-' + index,
             "tempUrl": baseUrl + index + ".svg",
             "src": baseUrl + index + ".svg"
-        })
+        });
     }
     return {
         label: item.label,
         value: item.value,
         list
-    }
-})
+    };
+});
 
 fs.writeFile('type.json', JSON.stringify(JSONData), function (err) {
     if (err) {
         return console.error(err);
     }
-    console.log('写入成功')
+    console.log('Write successful');
 });
-
-
-

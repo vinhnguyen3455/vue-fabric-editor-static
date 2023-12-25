@@ -7,3 +7,23 @@
   font-family: '华康金刚黑';
   src: url('./cn/华康金刚黑.ttf');
 }
+
+@font-face {
+  font-family: 'fanwood-webfont';
+  src: url('./en/fanwood-webfont.ttf');
+}
+
+@font-face {
+  font-family: 'fanwood-italic-webfont';
+  src: url('./en/fanwood-italic-webfont.ttf');
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url('./en/Roboto[wdth\,wght].ttf');
+}
+
+@font-face {
+  font-family: 'roboto-italic';
+  src: url('./en/Roboto-Italic[wdth\,wght].ttf');
+}
